@@ -3,31 +3,33 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 export default createVuetify({
   theme: {
-    defaultTheme: 'darkTheme',
+    defaultTheme: 'lightTheme',
     themes: {
       lightTheme: {
         dark: false,
         colors: {
-          background: '#000000',
-          surface: '#054640',
-          primary: '#005d4b',
-          secondary: '#06625f',
-          error: '#ff8080',
-          info: '#8080ff',
-          success: '#005d4b',
+          background: '#ffffff',
+          surface: '#e7e7e7',
+          primary: '#1dab61',
+          'primary-lighten': '#d8fdd2',
+          secondary: '#f4f4f4',
+          error: '#ec0a3f',
+          info: '#ece5dd',
+          success: '#25d366',
           warning: '#ffff80',
         },
       },
       darkTheme: {
         dark: true,
         colors: {
-          background: '#000000',
-          surface: '#054640',
-          primary: '#005d4b',
-          secondary: '#06625f',
-          error: '#ff8080',
-          info: '#8080ff',
-          success: '#005d4b',
+          background: '#0a0a0a',
+          surface: '#38383a',
+          primary: '#21bf63',
+          'primary-lighten': '#103629',
+          secondary: '#242625',
+          error: '#ef5767',
+          info: '#0087fd',
+          success: '#21bf63',
           warning: '#ffff80',
         },
       },
