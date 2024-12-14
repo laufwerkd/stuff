@@ -1,7 +1,12 @@
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {})
+</script>
 
 <template>
-  <h1>Hello World</h1>
+  <p>Hello World</p>
+  <v-card>test</v-card>
 </template>
 
 <style scoped></style>
