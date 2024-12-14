@@ -1,5 +1,6 @@
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
+import '@/styles/main.scss'
 
 export default createVuetify({
   theme: {
@@ -14,7 +15,7 @@ export default createVuetify({
           'primary-lighten': '#d8fdd2',
           secondary: '#f4f4f4',
           error: '#ec0a3f',
-          info: '#ece5dd',
+          info: '#0088fc',
           success: '#25d366',
           warning: '#ffff80',
         },
