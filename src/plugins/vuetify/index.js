@@ -1,6 +1,7 @@
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@/styles/main.scss'
+import '@mdi/font/css/materialdesignicons.css'
 
 export default createVuetify({
   theme: {
