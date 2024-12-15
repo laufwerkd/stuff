@@ -1,13 +1,12 @@
 <script setup>
-import { defineProps, computed } from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps({
   text: {
     type: String,
-    default: 'Button',
-    required: true,
+    default: null,
   },
-  prependIcon: {
+  icon: {
     type: String,
     default: null,
   },
@@ -19,21 +18,30 @@ const props = defineProps({
     type: String,
     default: 'flat',
   },
+  size: {
+    type: String,
+    default: null,
+  }
 })
+
+const isIcon = computed(() => !props.text && props.icon)
 
 const commonAttrs = computed(() => {
   return {
     color: props.color,
     variant: props.variant,
+    size: (!props.text && props.icon && !props.size) ? 'small' : props.size || 'default',
+    icon: !props.text && props.icon
   }
-})
+}).value
 </script>
 
 <template>
-  <v-btn :="{ ...$attrs, ...commonAttrs }">
+  <v-btn :="{ ...$attrs, ...commonAttrs }" :class="{'rounded-lg': props.text}">
     <div class="d-flex ga-2">
-      <v-icon v-if="prependIcon" :icon="prependIcon" />
-      {{ text }}
+      <v-icon v-if="icon" :icon="icon" />
+      <span v-if="text">{{ text }}</span>
+      <slot />
     </div>
   </v-btn>
 </template>
