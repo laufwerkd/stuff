@@ -33,7 +33,7 @@ const commonAttrs = computed(() => {
     size: (!props.text && props.icon && !props.size) ? 'small' : props.size || 'default',
     icon: !props.text && props.icon
   }
-}).value
+})
 </script>
 
 <template>

@@ -5,5 +5,5 @@ const { toggleTheme } = useThemeSwitcher()
 </script>
 
 <template>
-  <BaseButton @click="toggleTheme" icon="mdi-theme-light-dark" color="secondary" class="align-self-end" />
+  <BaseButton @click="toggleTheme" text="Toggle Theme" icon="mdi-theme-light-dark" color="secondary" />
 </template>

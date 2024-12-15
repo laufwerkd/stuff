@@ -3,6 +3,7 @@ import AppThemeSwitcher from './AppThemeSwitcher.vue'
 
 import BaseButton from './BaseButton.vue'
 import BaseCard from './BaseCard.vue'
+import BaseTooltip from './BaseTooltip.vue'
 
 export const registerComponents = (app) => {
   app.component('AppMenu', AppMenu)
@@ -10,4 +11,5 @@ export const registerComponents = (app) => {
 
   app.component('BaseButton', BaseButton)
   app.component('BaseCard', BaseCard)
+  app.component('BaseTooltip', BaseTooltip)
 }
