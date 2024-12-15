@@ -1,8 +1,8 @@
 export const THEMES = {
   light: {
-    value: 'lightTheme',
+    value: 'light',
   },
   dark: {
-    value: 'darkTheme',
+    value: 'dark',
   },
 }

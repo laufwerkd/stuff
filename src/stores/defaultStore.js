@@ -1,6 +1,15 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { defineStore, acceptHMRUpdate } from 'pinia'
 
-export const useDefaultStore = defineStore('useDefaultStore', () => {
-  return {}
+const defaultState = {}
+
+export const useDefaultStore = defineStore('DefaultStore', {
+  state: () => defaultState,
+
+  getters: {},
+
+  actions: {},
 })
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useDefaultStore, import.meta.hot))
+}
