@@ -1,8 +1,18 @@
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import useThemeSwitcher from '@/composables/useThemeSwitcher.js'
 
 const { theme, setToTheme } = useThemeSwitcher()
+
+const navItems = [
+  { name: 'home', text: 'Home' },
+  { name: 'about', text: 'About' },
+]
+const isMenuOpen = ref(false)
+
+const onCloseMenu = () => {
+  isMenuOpen.value = false
+}
 
 onMounted(() => {
   setToTheme(theme)
@@ -10,14 +20,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <v-menu transition="fade-transition" location="start" :close-on-content-click="false">
+  <v-menu v-model="isMenuOpen" transition="fade-transition" location="start" :close-on-content-click="false">
     <template #activator="{ props }">
       <BaseButton :="props" icon="mdi-menu" size="default" class="opener" />
     </template>
     <BaseCard class="me-3">
       <div class="d-flex flex-column ga-1">
-        <BaseButton :to="{ name: 'home' }" text="Home" />
-        <BaseButton :to="{ name: 'about' }" text="About" />
+        <BaseButton v-for="item in navItems" :to="{ name: item.name }" :text="item.text" @click="onCloseMenu" />
       </div>
       <v-divider />
       <AppThemeSwitcher />
